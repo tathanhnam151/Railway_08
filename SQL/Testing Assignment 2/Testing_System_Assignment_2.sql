@@ -2,47 +2,47 @@ USE Testing_system_2;
 
 -- Insert values to table Department:
 
-INSERT INTO Department
+INSERT INTO Department(DepartmentName)
 VALUES
-					(1,			'Marketing'),
-                    (2,			'Sale'),
-                    (3,			'Security'),
-                    (4, 		'Human_Resource'),
-                    (5, 		'Technical');
+					('Marketing'),
+                    ('Sale'),
+                    ('Security'),
+                    ('Human_Resource'),
+                    ('Technical');
 
 
 -- Insert values to table Position:
 
-INSERT INTO `Position`
+INSERT INTO `Position`(PositionName)
 VALUES                 
-					(1, 		'Excecutive'),
-                    (2,			'Manager'),
-                    (3,			'Assistant'),
-                    (4,			'Officer'),
-                    (5, 		'Trainee');
+					('Excecutive'),
+                    ('Manager'),
+                    ('Assistant'),
+                    ('Officer'),
+                    ('Trainee');
          
          
 -- Insert values to table Account:
 
-INSERT INTO `Account`
+INSERT INTO `Account`(Email, Username, Fullname, DepartmentID, PositionID, CreateDate)
 VALUES	 	
-					(1,			'nam123@gmail.com',			'nam123',		'Ta_Thanh_Nam',			5,		1,		'2019-09-22'),
-                    (2,			'trung456@gmail.com',		'trung123',		'Nguyen_Van_Trung',		2,		2,		'2019-03-05'),
-                    (3,			'van789@gmail.com',			'van789',		'Pham_Thai_Van',		3,		4,		'2019-11-12'),
-                    (4,			'hien145@gmail.com',		'hien145',		'Tran_Thu_Hien',		2,		3,		'2019-12-05'),
-                    (5,			'quan689@gmail.com',		'quang689',		'Pham_Minh_Quan',		1,		5,		'2020-01-31'),
-                    (6,			'dat202@gmail.com',			'dat202',		'Nguyen_Cong_Dat',		4,		2,		'2019-05-19');
+					('nam123@gmail.com',			'nam123',		'Ta_Thanh_Nam',			5,		1,		'2019-09-22'),
+                    ('trung456@gmail.com',		'trung123',		'Nguyen_Van_Trung',		2,		2,		'2019-03-05'),
+                    ('van789@gmail.com',			'van789',		'Pham_Thai_Van',		3,		4,		'2019-11-12'),
+                    ('hien145@gmail.com',		'hien145',		'Tran_Thu_Hien',		2,		3,		'2019-12-05'),
+                    ('quan689@gmail.com',		'quang689',		'Pham_Minh_Quan',		1,		5,		'2020-01-31'),
+                    ('dat202@gmail.com',			'dat202',		'Nguyen_Cong_Dat',		4,		2,		'2019-05-19');
          
                   
 -- Insert values to table Group:
 
-INSERT INTO `Group`
+INSERT INTO `Group`(GroupName, CreatorID, CreateDate)
 VALUES
-					(1,			'Group A',			1,			'2020-02-12'),
-                    (2,			'Group B',			2,			'2020-03-24'),
-                    (3,			'Group C',			3, 			'2020-03-27'),
-                    (4,			'Group D',			4,			'2020-04-14'),
-					(5,			'Group E',			1,			'2020-04-29');
+					('Group A',			1,			'2020-02-12'),
+                    ('Group B',			2,			'2020-03-24'),
+                    ('Group C',			3, 			'2020-03-27'),
+                    ('Group D',			4,			'2020-04-14'),
+					('Group E',			1,			'2020-04-29');
 
 
 -- Insert values to table GroupAccount:

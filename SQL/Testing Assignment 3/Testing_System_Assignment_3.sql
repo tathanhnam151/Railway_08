@@ -6,7 +6,7 @@ INSERT INTO Department
 VALUES
 					(1,			'Marketing'),
                     (2,			'Sale'),
-                    (3,			'Security'),
+                    (3,			'Logistics'),
                     (4, 		'Human Resource'),
                     (5, 		'Technical'),
                     (6, 		'Production'),
@@ -39,11 +39,11 @@ VALUES
 					(1,			'nam123@gmail.com',			'nam123',		'Ta Thanh Nam',			5,		1,		'2018-09-22'),
                     (2,			'trung456@gmail.com',		'trung123',		'Nguyen Van Trung',		2,		2,		'2018-03-05'),
                     (3,			'van789@gmail.com',			'van789',		'Pham Thai Van',		3,		4,		'2018-11-12'),
-                    (4,			'hien145@gmail.com',		'hien145',		'Tran Thu Hien',		2,		3,		'2018-12-05'),
+                    (4,			'dtdao145@gmail.com',		'dao145',		'Duong Thu Dao',		2,		3,		'2018-12-05'),
                     (5,			'quan689@gmail.com',		'quang689',		'Pham Minh Quan',		1,		5,		'2019-01-31'),
                     (6,			'thanh151@gmail.com',		'thanh151',		'Tran Xuan Thanh',		4,		6,		'2019-05-17'),
                     (7,			'hoang3701@gmail.com',		'hoang3701',	'Nguyen The Hoang',		7,		8,		'2019-12-12'),
-                    (8,			'hien898@gmail.com',		'hien898',		'Nguyen Van Hien',		6,		9,		'2020-02-24'),
+                    (8,			'hien898@gmail.com',		'hien898',		'Nguyen Van Hien',		3,		9,		'2020-02-24'),
                     (9,			'xuantruong04@gmail.com',	'truong04',		'Luong Xuan Truong',	6,		7,		'2020-07-27'),
                     (10,		'dat202@gmail.com',			'dat202',		'Nguyen Cong Dat',		10,		8,		'2020-11-19');
          
@@ -149,7 +149,7 @@ VALUES
                     ('VTIQ007'		, 'Đề thi SQL'			,	2			,	60		,   '7'			,'2020-04-05'),
                     ('VTIQ008'		, 'Đề thi Python'		,	8			,	60		,   '8'			,'2020-04-07'),
                     ('VTIQ009'		, 'Đề thi ADO.NET'		,	4			,	90		,   '9'			,'2020-04-07'),
-                    ('VTIQ010'		, 'Đề thi ASP.NET'		,	7			,	90		,   '10'		,'2020-04-08');
+                    ('VTIQ010'		, 'Đề thi ASP.NET'		,	7			,	90		,   '10'		,'2020-11-20');
 
 
 -- Insert values to table ExamQuestion:
