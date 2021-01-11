@@ -3,7 +3,7 @@ USE Fresher;
 -- Question 2: Return the list of trainees pass the test and sorted by months of birth date
 
 SELECT 
-    TraineeID, Full_Name, Birth_Date, Gender, Evaluation_Notes
+    TraineeID, Full_Name, VTI_Account, Birth_Date, Gender, Training_Class, Evaluation_Notes
 FROM
     Trainee
 WHERE 
@@ -21,7 +21,7 @@ ORDER BY
 -- Question 3: Return the information of trainee who has the longest name
 
 SELECT
-	Full_name, Birth_Date, Gender, Training_Class, Evaluation_Notes
+	TraineeID, Full_name, VTI_Account, Birth_Date, Gender, Training_Class, Evaluation_Notes
 FROM
 	Trainee
 WHERE
@@ -31,7 +31,7 @@ WHERE
 -- Question 4: Return the list of trainees pass the test
 
 SELECT 
-    TraineeID, Full_Name, Birth_Date, Gender, Evaluation_Notes
+    TraineeID, Full_Name, VTI_Account, Birth_Date, Gender, Training_Class, Evaluation_Notes
 FROM
     Trainee
 WHERE 

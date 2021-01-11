@@ -13,7 +13,7 @@ CREATE TABLE Trainee (
 		ET_English			TINYINT UNSIGNED NOT NULL,
         Training_Class		INT NOT NULL,
         Evaluation_Notes	TEXT,
-        VTI_Account			VARCHAR(50), 
+        VTI_Account			VARCHAR(50) NOT NULL UNIQUE, 
         Month_of_birthdate 	TINYINT	UNSIGNED NOT NULL
 );
 
