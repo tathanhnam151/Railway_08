@@ -184,7 +184,7 @@ LEFT JOIN
 WHERE GroupAccount.GroupID is NULL;
 
 
--- Question 16: 
+-- Question 16: Return question with no answer:
 
 SELECT
 	Question.QuestionID, Question.Content
@@ -194,4 +194,111 @@ WHERE
 	QuestionID NOT IN (SELECT QuestionID FROM Answer)
 ORDER BY
 	QuestionID ASC;
+    
+    
+-- Question 17:
+-- a) Return account from groupID = 1
+
+SELECT 
+	`Account`.AccountID, `Account`.FullName
+FROM
+	`Account`
+LEFT JOIN
+	GroupAccount ON `Account`.AccountID = GroupAccount.AccountID
+WHERE
+	GroupAccount.GroupID = 1;
 	
+-- b) Return account from groupID = 1
+
+SELECT 
+	`Account`.AccountID, `Account`.FullName
+FROM
+	`Account`
+LEFT JOIN
+	GroupAccount ON `Account`.AccountID = GroupAccount.AccountID
+WHERE
+	GroupAccount.GroupID = 2;
+
+-- c) Join results from a) and b) without duplication:
+
+SELECT 
+	`Account`.AccountID, `Account`.FullName
+FROM
+	`Account`
+LEFT JOIN
+	GroupAccount ON `Account`.AccountID = GroupAccount.AccountID
+WHERE
+	GroupAccount.GroupID = 1
+
+UNION
+
+SELECT 
+	`Account`.AccountID, `Account`.FullName
+FROM
+	`Account`
+LEFT JOIN
+	GroupAccount ON `Account`.AccountID = GroupAccount.AccountID
+WHERE
+	GroupAccount.GroupID = 2;
+
+
+-- Question 18: 
+-- a) Return group with more than 5 members
+
+SELECT
+	GroupAccount.GroupID, `Group`.GroupName, COUNT(`Account`.AccountID) AS `Members`
+FROM
+	GroupAccount
+RIGHT JOIN
+	`Group` ON GroupAccount.GroupID = `Group`.GroupID
+LEFT JOIN
+	`Account` ON GroupAccount.AccountID = `Account`.AccountID
+GROUP BY
+	GroupAccount.GroupID
+HAVING
+	Members > 5;
+    
+-- b) Return group with less than 7 members
+
+SELECT
+	GroupAccount.GroupID, `Group`.GroupName, COUNT(`Account`.AccountID) AS `Members`
+FROM
+	GroupAccount
+RIGHT JOIN
+	`Group` ON GroupAccount.GroupID = `Group`.GroupID
+LEFT JOIN
+	`Account` ON GroupAccount.AccountID = `Account`.AccountID
+GROUP BY
+	GroupAccount.GroupID
+HAVING
+	Members < 7;
+    
+-- c) Join the results of a) and b)
+
+SELECT
+	GroupAccount.GroupID, `Group`.GroupName, COUNT(`Account`.AccountID) AS `Members`
+FROM
+	GroupAccount
+RIGHT JOIN
+	`Group` ON GroupAccount.GroupID = `Group`.GroupID
+LEFT JOIN
+	`Account` ON GroupAccount.AccountID = `Account`.AccountID
+GROUP BY
+	GroupAccount.GroupID
+HAVING
+	Members > 5
+
+UNION
+
+SELECT
+	GroupAccount.GroupID, `Group`.GroupName, COUNT(`Account`.AccountID) AS `Members`
+FROM
+	GroupAccount
+RIGHT JOIN
+	`Group` ON GroupAccount.GroupID = `Group`.GroupID
+LEFT JOIN
+	`Account` ON GroupAccount.AccountID = `Account`.AccountID
+GROUP BY
+	GroupAccount.GroupID
+HAVING
+	Members < 7;
