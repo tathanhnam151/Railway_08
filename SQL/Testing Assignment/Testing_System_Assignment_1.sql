@@ -84,5 +84,7 @@ CREATE TABLE Exam (
 
 CREATE TABLE ExamQuestion (
 		ExamID				INT,
-		QuestionID			INT
+		QuestionID			INT,
+        FOREIGN KEY (ExamID) REFERENCES Exam(ExamID),
+        FOREIGN KEY (QuestionID) REFERENCES	Question(QuestionID)
 );
