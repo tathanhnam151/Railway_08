@@ -1,3 +1,5 @@
+-- Extra Assignment 4's Tables
+
 DROP DATABASE Extra_Assignment_4;
 
 CREATE DATABASE Extra_Assignment_4;
@@ -17,7 +19,7 @@ CREATE TABLE Employee_Table (
     
 CREATE TABLE Employee_Skill_Table (
 		Employee_Number				INT NOT NULL,
-        Skill_Code					INT NOT NULL,
+        Skill_Code					VARCHAR(20) NOT NULL,
         Date_Registered				DATE,
 		FOREIGN KEY	(Employee_Number) REFERENCES Employee_Table (Employee_Number) ON DELETE CASCADE
 );
