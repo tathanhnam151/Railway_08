@@ -68,6 +68,22 @@ GROUP BY
 ORDER BY
 	Occurrence DESC
 LIMIT 1;
+
+-- Question 5.1 Return list of question that used the most in exams:
+SELECT 		
+	Question.QuestionID, Question.Content, COUNT(Question.Content) AS 'Occurence'
+FROM		
+	Question 
+INNER JOIN 	ExamQuestion ON Question.QuestionID = ExamQuestion.QuestionID
+GROUP BY	
+	Question.Content
+HAVING		
+	COUNT(Question.Content) = (	SELECT	MAX(CountQ)
+								FROM		
+										(SELECT 		COUNT(Question.QuestionID) AS CountQ
+										FROM			ExamQuestion  
+										INNER JOIN 		Question ON ExamQuestion.QuestionID = Question.QuestionID
+										GROUP BY		Question.QuestionID) AS `Max` );
    
     
 -- Question 6: Return occurrences of each category in all questions
@@ -82,7 +98,7 @@ GROUP BY
 	CategoryQuestion.CategoryID
 ORDER BY
 	CategoryID ASC;
-       
+    
         
 -- Question 7: Return occerrences of each questions in all exams:
 
@@ -109,10 +125,30 @@ FROM
 LEFT JOIN
 	Question ON Question.QuestionID = Answer.QuestionID
 GROUP BY
-	Answer.QuestionID 
+	Answer.QuestionID
 ORDER BY 
 	Occurrence DESC
 LIMIT 1;
+
+-- Question 8.1: Return question with most answer:
+
+SELECT
+	Answer.QuestionID, Question.Content, 
+    COUNT(Answer.Answer) AS Occurrence
+FROM 
+	Answer
+LEFT JOIN
+	Question ON Question.QuestionID = Answer.QuestionID
+GROUP BY
+	Answer.QuestionID 
+HAVING
+	COUNT(Answer.AnswerID) = (	SELECT MAX(CountAns)
+								FROM
+									(	SELECT COUNT(Answer.AnswerID) AS CountAns
+										FROM Answer
+                                        INNER JOIN Question ON Answer.QuestionID = Question.QuestionID
+                                        GROUP BY Question.QuestionID
+											) AS MAXSOMETHING);
 
 
 -- Question 9: Return number of accounts in each group
@@ -125,7 +161,7 @@ FROM
 RIGHT JOIN
 	`Group` ON `Group`.GroupID = GroupAccount.GroupID
 GROUP BY
-	GroupAccount.AccountID
+	GroupAccount.GroupID
 ORDER BY
 	GroupAccount.GroupID ASC;
 
@@ -134,15 +170,25 @@ ORDER BY
 
 SELECT
 	`Account`.PositionID, `Position`.PositionName,
-    COUNT(`Account`.PositionID) AS Members
+    COUNT(`Account`.AccountID) AS Members
 FROM
 	`Account`
 JOIN
 	`Position` ON `Position`.PositionID = `Account`.PositionID
 GROUP BY
 	`Account`.PositionID
-ORDER BY
-	Members ASC;
+HAVING
+	COUNT(`Account`.AccountID) = (	SELECT MIN(CountMem)
+									FROM
+                                    (	SELECT 
+											COUNT(`Account`.AccountID) AS CountMem
+										FROM
+											`Account`
+										JOIN
+											`Position` ON `Account`.PositionID = `Position`.PositionID
+										GROUP BY 
+											`Account`.PositionID) AS MinMem );
+	
 
 
 -- Question 11: Return how many dev, test, scum master, PM each department has
@@ -302,3 +348,4 @@ GROUP BY
 	GroupAccount.GroupID
 HAVING
 	Members < 7;
+    
