@@ -8,13 +8,13 @@ DROP VIEW IF EXISTS sale_employees;
 
 CREATE VIEW sale_employees AS
 SELECT 
-	`Account`.AccountID, `Account`.FullName, Department.DepartmentName AS Department
+	a.AccountID, a.FullName, d.DepartmentName AS Department
 FROM
-	`Account`
+	`Account` a
 LEFT JOIN	
-	Department ON `Account`.departmentID = Department.DepartmentID
+	Department d ON a.departmentID = d.DepartmentID
 WHERE 
-	`Account`.DepartmentID = '2';
+	d.DepartmentName = 'Sale';
 
 SELECT * FROM sale_employees;
 
@@ -37,7 +37,7 @@ HAVING
 	COUNT(GroupAccount.GroupID) = (	SELECT MAX(CountGrp) 
 									FROM (	SELECT COUNT(AccountID) AS CountGrp
 											FROM GroupAccount
-                                            GROUP BY AccountID) AS Namtadeptrai);
+                                            GROUP BY AccountID) AS maxsmth);
                                             
 SELECT * FROM acc_max_grp;
 
@@ -62,10 +62,8 @@ SELECT * FROM long_question;
 
 -- Delete long questions
 
-DELETE FROM
-	Question
-WHERE
-	Question.QuestionID = (	SELECT
+DELETE FROM Question
+WHERE Question.QuestionID = (	SELECT
 								QuestionID
 							FROM
 								long_question);
