@@ -191,8 +191,38 @@ HAVING
 	
 
 
--- Question 11: Return how many dev, test, scum master, PM each department has
+-- Question 11: Return how many dev, test, scrum master, PM each department has
 
+SELECT 
+    t1.DepartmentID,
+    t1.PositionID,
+    IF((t2.number_of_account IS NULL),
+        0,
+        t2.number_of_account) AS number_of_account
+FROM
+    (SELECT 
+        Department.DepartmentID, `Position`.PositionID
+    FROM
+        Department
+    CROSS JOIN `Position` 
+    WHERE
+        `Position`.PositionName IN ('Test' , 'Scrum Master', 'Developer', 'PM')
+    ORDER BY Department.DepartmentID , `Position`.PositionID) AS t1
+        LEFT JOIN
+    (SELECT 
+        Department.DepartmentID,
+            `Position`.PositionID,
+            COUNT(`Account`.AccountID) AS number_of_account
+    FROM
+        `Position`
+    LEFT JOIN `Account` ON `Position`.PositionID = `Account`.PositionID
+    RIGHT JOIN department  ON `Account`.DepartmentID = Department.DepartmentID
+    WHERE
+        `Position`.PositionName IN ('Test' , 'Scrum Master', 'Developer', 'PM')
+    GROUP BY Department.DepartmentID , `Position`.PositionID) AS t2 ON t1.DepartmentID = t2.DepartmentID
+        AND t1.PositionID = t2.PositionID
+GROUP BY t1.DepartmentID , t1.PositionID
+ORDER BY t1.DepartmentID , t1.PositionID;
 
 -- Question 12: Return information of questions
 
@@ -348,4 +378,5 @@ GROUP BY
 	GroupAccount.GroupID
 HAVING
 	Members < 7;
+		
     
