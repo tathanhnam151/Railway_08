@@ -26,7 +26,7 @@ VALUES
                     (4,			'Office Manager'),
                     (5, 		'Officer'),
                     (6, 		'Test'),
-                    (7, 		'Scum Master'),
+                    (7, 		'Scrum Master'),
                     (8, 		'Developer'),
                     (9, 		'PM'),
                     (10, 		'Trainee');
