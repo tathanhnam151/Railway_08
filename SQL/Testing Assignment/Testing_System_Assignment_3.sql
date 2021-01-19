@@ -112,7 +112,7 @@ VALUES
         
 -- Insert values to table Question:
 
-INSERT INTO Question(Content, CategoryID, TypeID, CreatorID, CreateDate )
+INSERT INTO Question(     Content, 		CategoryID,   TypeID,   CreatorID,       CreateDate )
 VALUES
 					('Java Questions',		1,			1,			2,			'2020-04-05'),
 					('PHP Questions',		10,			2,   		2,			'2020-04-05'),
@@ -124,7 +124,12 @@ VALUES
 					('C++ Questions',		8,   		1,   		8,			'2020-04-07'),
 					('SQL Questions',		4,   		2,   		9,			'2020-04-07'),
 					('Python Questions1',	7,   		1,   		10,			'2020-04-07'),
-                    ('Python Questions2',	7,   		1,   		10,			'2020-04-07');
+                    ('Python Questions2',	7,   		1,   		10,			'2020-04-07'),
+                    ('Python Questions3',	7,   		1,   		8,			'2021-01-07'),
+                    ('Python Questions4',	7,   		1,   		8,			'2021-01-07'),
+                    ('Python Questions5',	7,   		2,   		8,			'2021-01-08'),
+                    ('Python Questions6',	7,   		2,   		7,			'2021-01-09'),
+                    ('Python Questions7',	7,   		2,   		6,			'2021-01-11');
 
 
 -- Insert values to table Answer:
