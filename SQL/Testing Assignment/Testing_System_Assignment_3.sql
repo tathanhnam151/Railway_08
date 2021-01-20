@@ -1,5 +1,4 @@
 USE Testing_system_2;
-
 -- Insert values to table Department:
 
 INSERT INTO Department(DepartmentName)
@@ -13,7 +12,8 @@ VALUES
 						(N'Phó giám đốc'),
 						(N'Giám đốc'	),
 						(N'Thư kí'		),
-						(N'Bán hàng'	);
+						(N'Bán hàng'	),
+                        (N'Phòng chờ'	);
 
 
 -- Insert values to table Position:
@@ -117,7 +117,7 @@ VALUES
 					('Java Questions',		1,			1,			2,			'2020-04-05'),
 					('PHP Questions',		10,			2,   		2,			'2020-04-05'),
 					('C# Questions',		9,   		2,   		3,			'2020-04-06'),
-					('Ruby Questions',		6,   		1,   		4,			'2020-04-06'),
+					('ASP.NET Questions',	2,   		1,   		7,			'2020-04-06'),
 					('Postman Questions',	5,   		1,   		5,			'2020-04-06'),
 					('ADO.NET Questions',	3,   		2,   		6,			'2020-04-06'),
 					('ASP.NET Questions',	2,   		1,   		7,			'2020-04-06'),
@@ -126,10 +126,14 @@ VALUES
 					('Python Questions1',	7,   		1,   		10,			'2020-04-07'),
                     ('Python Questions2',	7,   		1,   		10,			'2020-04-07'),
                     ('Python Questions3',	7,   		1,   		8,			'2021-01-07'),
-                    ('Python Questions4',	7,   		1,   		8,			'2021-01-07'),
-                    ('Python Questions5',	7,   		2,   		8,			'2021-01-08'),
-                    ('Python Questions6',	7,   		2,   		7,			'2021-01-09'),
-                    ('Python Questions7',	7,   		2,   		6,			'2021-01-11');
+                    ('Python Questions4',	7,   		1,   		8,			'2021-02-07'),
+                    ('Python Questions5',	7,   		2,   		8,			'2021-02-08'),
+                    ('Python Questions6',	7,   		2,   		7,			'2021-04-09'),
+                    ('Python Questions7',	7,   		2,   		6,			'2021-05-11'),
+                    ('ASP.NET Questions2',	2,   		1,   		7,			'2020-12-06'),
+                    ('Postman Questions2',	5,   		1,   		5,			'2020-12-06'),
+                    ('C++ Questions2',		8,   		1,   		8,			'2020-10-07'),
+                    ('Java Questions2',		1,			1,			2,			'2020-9-05');
 
 
 -- Insert values to table Answer:

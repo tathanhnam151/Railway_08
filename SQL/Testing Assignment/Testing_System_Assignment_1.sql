@@ -85,6 +85,6 @@ CREATE TABLE Exam (
 CREATE TABLE ExamQuestion (
 		ExamID				INT,
 		QuestionID			INT,
-        FOREIGN KEY (ExamID) REFERENCES Exam(ExamID),
-        FOREIGN KEY (QuestionID) REFERENCES	Question(QuestionID)
+        FOREIGN KEY (ExamID) REFERENCES Exam(ExamID) ON DELETE CASCADE,
+        FOREIGN KEY (QuestionID) REFERENCES	Question(QuestionID) ON DELETE CASCADE
 );
