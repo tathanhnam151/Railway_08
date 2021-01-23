@@ -1,4 +1,5 @@
 USE Testing_system_2;
+
 -- Insert values to table Department:
 
 INSERT INTO Department(DepartmentName)
@@ -9,9 +10,9 @@ VALUES
 						(N'Nhân sự'		),
 						(N'Kỹ thuật'	),
 						(N'Tài chính'	),
-						(N'Phó giám đốc'),
-						(N'Giám đốc'	),
-						(N'Thư kí'		),
+						(N'Tấu hài 1'	),
+						(N'Tấu hài 2'	),
+						(N'Đi chợ'		),
 						(N'Bán hàng'	),
                         (N'Phòng chờ'	);
 
@@ -45,7 +46,8 @@ VALUES
                     ('hoang3701@gmail.com',		'hoang3701',	'Nguyen The Hoang',		7,		8,		'2019-12-12'),
                     ('hien898@gmail.com',		'hien898',		'Nguyen Van Hien',		3,		9,		'2020-12-21'),
                     ('xuantruong04@gmail.com',	'truong04',		'Luong Xuan Truong',	2,		7,		'2020-12-27'),
-                    ('dat202@gmail.com',		'dat202',		'Nguyen Cong Dat',		10,		8,		'2021-01-19');
+                    ('dat202@gmail.com',		'dat202',		'Nguyen Cong Dat',		10,		8,		'2021-01-19'),
+                    ('admin@gmail.com',			'admindeptrai',	'Nguyen Thi Admin', 	1,		2,		'2019-09-22');
          
                   
 -- Insert values to table Group:
@@ -143,8 +145,8 @@ VALUES
 					('Trả lời 01',			1,			0),
 					('Trả lời 02', 			1,			1),
                     ('Trả lời 03',   		1,			0),
-                    ('Trả lời 04',   		1,			1),
-                    ('Trả lời 05',   		2,			1),
+                    ('Trả lời 04',   		2,			1),
+                    ('Trả lời 05',   		4,			1),
                     ('Trả lời 06',   		3,			1),
                     ('Trả lời 07',   		4,			0),
                     ('Trả lời 08',   		8,			0),
@@ -165,7 +167,8 @@ VALUES
                     ('VTIQ007'		, 'Đề thi SQL'			,	2			,	60		,   '7'			,'2020-04-05'),
                     ('VTIQ008'		, 'Đề thi Python'		,	8			,	60		,   '8'			,'2020-04-07'),
                     ('VTIQ009'		, 'Đề thi ADO.NET'		,	4			,	90		,   '9'			,'2020-04-07'),
-                    ('VTIQ010'		, 'Đề thi ASP.NET'		,	7			,	90		,   '10'		,'2020-11-20');
+                    ('VTIQ010'		, 'Đề thi ASP.NET'		,	7			,	90		,   '10'		,'2020-11-20'),
+					('VTIQ011'		, 'Đề thi ASP.NET1'		,	7			,	90		,   '10'		,'2021-11-20');
 
 
 -- Insert values to table ExamQuestion:

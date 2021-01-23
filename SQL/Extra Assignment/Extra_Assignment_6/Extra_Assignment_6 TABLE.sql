@@ -17,10 +17,10 @@ CREATE TABLE employee (
 CREATE TABLE project (	
 	ProjectID					INT PRIMARY KEY AUTO_INCREMENT,
     ManagerID					INT,
-    ProjectName					VARCHAR(30),
+    ProjectName					VARCHAR(50),
     ProjectStartDate			DATE,
-    ProjectDescription			VARCHAR(50),
-    ProjectDetail				VARCHAR(50),
+    ProjectDescription			VARCHAR(80),
+    ProjectDetail				VARCHAR(100),
     ProjectCompletedOn			DATE,
     FOREIGN KEY (ManagerID) REFERENCES employee(EmployeeID) ON DELETE CASCADE
 );
@@ -31,7 +31,7 @@ CREATE TABLE project_modules (
     EmployeeID					INT,
     ProjectModulesDate			DATE,
     ProjectModulesCompletedOn	DATE,
-    ProjectModulesDescription	VARCHAR(50),
+    ProjectModulesDescription	VARCHAR(100),
     FOREIGN KEY (ProjectID) REFERENCES project(ProjectID) ON DELETE CASCADE,
     FOREIGN KEY (EmployeeID) REFERENCES employee(EmployeeID) ON DELETE CASCADE
 );
@@ -41,8 +41,8 @@ CREATE TABLE work_done (
     EmployeeID					INT,
     ModuleID					INT,
 	WorkDoneDate				DATE,
-	WorkDoneDescription			VARCHAR(50),
-    WorkDoneStatus				VARCHAR(30),
+	WorkDoneDescription			VARCHAR(100),
+    WorkDoneStatus				VARCHAR(100),
     FOREIGN KEY (EmployeeID) REFERENCES employee(EmployeeID) ON DELETE CASCADE,
     FOREIGN KEY (ModuleID) REFERENCES project_modules(ModuleID) ON DELETE CASCADE
 );

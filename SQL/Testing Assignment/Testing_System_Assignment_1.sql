@@ -6,7 +6,7 @@ USE Testing_System_2;
 
 CREATE TABLE Department (
 		DepartmentID 		TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-		DepartmentName 		VARCHAR(30) NOT NULL UNIQUE 
+		DepartmentName 		VARCHAR(30) NOT NULL UNIQUE
 );
 
 CREATE TABLE `Position` (
@@ -19,6 +19,7 @@ CREATE TABLE `Account` (
 		Email 				VARCHAR(50) NOT NULL UNIQUE,	
 		Username 			VARCHAR(20) NOT NULL UNIQUE, 
 		Fullname 			VARCHAR(50) NOT NULL,
+        Gender				ENUM('Male', 'Female', 'Unknow'),
 		DepartmentID 		TINYINT UNSIGNED,
 		PositionID 			TINYINT UNSIGNED,
 		CreateDate 			DATE,
@@ -31,7 +32,7 @@ CREATE TABLE `Group` (
 		GroupName			VARCHAR(20),
 		CreatorID 			INT UNSIGNED NOT NULL,
 		CreateDate 			DATE,
-        FOREIGN KEY (CreatorID) REFERENCES `Account`(AccountID)
+        FOREIGN KEY (CreatorID) REFERENCES `Account`(AccountID) 
 );
 
 CREATE TABLE GroupAccount (

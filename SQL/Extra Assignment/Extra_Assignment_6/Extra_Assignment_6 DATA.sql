@@ -1,4 +1,4 @@
--- Insert Data:
+-- Question a) Insert Data:
 
 USE Extra_6;
 
@@ -42,8 +42,8 @@ VALUES
 
 INSERT INTO project  (ManagerID, ProjectName, ProjectStartDate, ProjectDescription, ProjectDetail, ProjectCompletedOn) 
 VALUES
-				(4, 'Clopidogrel Bisulfate', '2020-02-13', 'First Trust Europe AlphaDEX Fund', 'Extirpate matter from L Low Arm Subcu/Fascia, Perc', '2021-03-17'),
-				(6, 'ELM MIX, AMERICAN/CHINESE/SLIPPERY POLLEN', '2020-03-17', 'Lumos Networks Corp.', 'Insert of Infusion Dev into R Shoulder, Perc Endo Approach', '2021-04-08'),
+				(4, 'Clopidogrel Bisulfate', '2020-02-13', 'First Trust Europe AlphaDEX Fund', 'Extirpate matter from L Low Arm Subcu/Fascia, Perc', '2020-06-17'),
+				(6, 'ELM MIX', '2020-03-17', 'Lumos Networks Corp.', 'Insert of Infusion Dev into R Shoulder, Perc Endo Approach', '2021-04-08'),
 				(6, 'Robinia Nicotiana', '2020-01-31', 'NeuroDerm Ltd.', 'Removal of Infusion Dev from L Tarsal Jt, Perc Endo Approach', '2021-05-08'),
 				(7, 'Walgreens', '2020-02-05', 'Stanley Black & Decker, Inc.', 'Excision of Left Foot Tendon, Perc Endo Approach', '2021-02-17'),
 				(5, 'NEXIUM', '2020-02-14', 'Consolidated Edison Inc', 'Bypass Cecum to Transverse Colon, Perc Endo Approach', '2021-04-11'),
@@ -102,35 +102,35 @@ INSERT INTO work_done (EmployeeID, ModuleID, WorkDoneDate, WorkDoneDescription, 
 
 VALUES 
 
-				(27, 12, '2021-01-08', 'Removal of Intraluminal Device from Left Ear, Via Opening', true),	
-				(19, 20, '2021-01-07', 'LDR Brachytherapy of Bronchus using Californium 252', true),
-				(14, 15, null, 'Insertion of Infusion Dev into Fem Perineum, Open Approach', false),
-				(27, 14, null, 'Release Right Ethmoid Bone, Open Approach', false),
-				(21, 19, '2021-01-05', 'Measurement of Urinary Pressure, Via Opening', true),
-				(11, 20, '2021-01-01', 'Supplement Papillary Muscle with Synth Sub, Open Approach', true),
-				(19, 13, '2021-01-05', 'Drainage of Sacral Plexus, Open Approach', true),
-				(14, 15, '2021-01-02', 'Revision of Synth Sub in L Knee Jt, Patella, Extern Approach', true),
-				(23, 15, null, 'Drainage of Brachial Plexus with Drain Dev, Open Approach', false),
-				(16, 12, '2021-01-02', 'Transfer Oculomotor Nerve to Vagus Nerve, Perc Endo Approach', true),
-				(15, 22, '2021-01-02', 'Fusion Cerv Jt w Nonaut Sub, Ant Appr A Col, Open', true),
-				(23, 10, null, 'Auditory Evoked Potentials Assess w Electrophysiologic Equip', false),
-				(11, 12, '2021-01-02', 'Fusion of Thor Jt, Post Appr A Col, Open Approach', true),
-				(17, 24, '2021-01-09', 'Dilation of R Int Iliac Art with 4 Drug-elut, Open Approach', true),
-				(22, 11, '2021-01-09', 'Replacement of R Popl Art with Synth Sub, Open Approach', true),
-				(11, 16, '2021-01-03', 'Release Left Ethmoid Sinus, Percutaneous Endoscopic Approach', true),
-				(17, 27, '2021-01-05', 'Repair Left Trunk Bursa and Ligament, Perc Endo Approach', false),
-				(20, 23, '2021-01-02', 'Extirpation of Matter from Bi Adrenal Gland, Open Approach', true),
-				(28, 15, null, 'Replace L Low Leg Skin w Nonaut Sub, Full Thick, Extern', false),
-				(23, 20, '2021-01-08', 'Excision of Right Axillary Vein, Perc Endo Approach, Diagn', true),
-				(27, 19, '2021-01-08', 'Supplement Right Basilic Vein with Autol Sub, Perc Approach', true),
-				(20, 27, '2021-01-03', 'Contact Radiation of Hemibody', true),
-				(18, 20, '2021-01-09', 'Excision of Left Humeral Shaft, Open Approach', true),
-				(22, 12, null, 'Destruction of Transverse Colon, Percutaneous Approach', false),
-				(12, 14, '2021-01-01', 'Replacement of L Carpal Jt with Synth Sub, Open Approach', true),
-				(18, 25, '2021-01-03', 'Dilation of Pancreatic Duct, Percutaneous Approach', true),
-				(24, 15, null, 'Dilate R Post Tib Art, Bifurc, w Drug-elut Intra, Perc Endo', false),
-				(12, 21, '2021-01-08', 'Drainage of Median Nerve, Percutaneous Approach, Diagnostic', true),
-				(20, 15, '2020-12-31', 'Destruction of Left Maxillary Sinus, Perc Endo Approach', true),
-				(22, 12, '2020-12-31', 'Occlusion of Left Kidney Pelvis, Perc Endo Approach', true);			
+				(27, 1, '2021-01-08', 'Removal of Intraluminal Device from Left Ear, Via Opening', true),	
+				(25, 2, '2021-01-07', 'LDR Brachytherapy of Bronchus using Californium 252', true),
+				(23, 3, null, 'Insertion of Infusion Dev into Fem Perineum, Open Approach', false),
+				(22, 4, null, 'Release Right Ethmoid Bone, Open Approach', false),
+				(21, 5, '2021-01-05', 'Measurement of Urinary Pressure, Via Opening', true),
+				(14, 6, '2021-01-01', 'Supplement Papillary Muscle with Synth Sub, Open Approach', true),
+				(13, 7, '2021-01-05', 'Drainage of Sacral Plexus, Open Approach', true),
+				(16, 8, '2021-01-02', 'Revision of Synth Sub in L Knee Jt, Patella, Extern Approach', true),
+				(23, 9, null, 'Drainage of Brachial Plexus with Drain Dev, Open Approach', false),
+				(18, 10, '2021-01-02', 'Transfer Oculomotor Nerve to Vagus Nerve, Perc Endo Approach', true),
+				(17, 11, '2021-01-02', 'Fusion Cerv Jt w Nonaut Sub, Ant Appr A Col, Open', true),
+				(18, 12, null, 'Auditory Evoked Potentials Assess w Electrophysiologic Equip', false),
+				(21, 13, '2021-01-02', 'Fusion of Thor Jt, Post Appr A Col, Open Approach', true),
+				(28, 14, '2021-01-09', 'Dilation of R Int Iliac Art with 4 Drug-elut, Open Approach', true),
+				(26, 15, '2021-01-09', 'Replacement of R Popl Art with Synth Sub, Open Approach', true),
+				(25, 16, '2021-01-03', 'Release Left Ethmoid Sinus, Percutaneous Endoscopic Approach', true),
+				(28, 17, '2021-01-05', 'Repair Left Trunk Bursa and Ligament, Perc Endo Approach', false),
+				(15, 18, '2021-01-02', 'Extirpation of Matter from Bi Adrenal Gland, Open Approach', true),
+				(25, 19, null, 'Replace L Low Leg Skin w Nonaut Sub, Full Thick, Extern', false),
+				(19, 20, '2021-01-08', 'Excision of Right Axillary Vein, Perc Endo Approach, Diagn', true),
+				(18, 21, '2021-01-08', 'Supplement Right Basilic Vein with Autol Sub, Perc Approach', true),
+				(14, 22, '2021-01-03', 'Contact Radiation of Hemibody', true),
+				(11, 23, '2021-01-09', 'Excision of Left Humeral Shaft, Open Approach', true),
+				(16, 24, null, 'Destruction of Transverse Colon, Percutaneous Approach', false),
+				(17, 25, '2021-01-01', 'Replacement of L Carpal Jt with Synth Sub, Open Approach', true),
+				(16, 26, '2021-01-03', 'Dilation of Pancreatic Duct, Percutaneous Approach', true),
+				(10, 27, null, 'Dilate R Post Tib Art, Bifurc, w Drug-elut Intra, Perc Endo', false),
+				(25, 28, '2021-01-08', 'Drainage of Median Nerve, Percutaneous Approach, Diagnostic', true),
+				(22, 29, '2020-12-31', 'Destruction of Left Maxillary Sinus, Perc Endo Approach', true),
+				(16, 30, '2020-12-31', 'Occlusion of Left Kidney Pelvis, Perc Endo Approach', true);			
 				
 
