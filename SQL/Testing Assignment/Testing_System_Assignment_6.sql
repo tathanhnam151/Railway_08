@@ -78,7 +78,7 @@ BEGIN
     HAVING COUNT(q.questionID) IN (	SELECT MAX(CountQ) 
 									FROM (	SELECT COUNT(QuestionID) AS CountQ
 											FROM Question q
-                                            GROUP BY TypeID) AS MaxAns);
+                                            GROUP BY TypeID) AS MaxQues);
 END//
 
 DELIMITER ;
@@ -98,7 +98,7 @@ BEGIN
     FROM Question q
     JOIN TypeQuestion tq ON q.TypeID = tq.TypeID
     GROUP BY q.TypeID
-    HAVING COUNT(q.questionID) IN (	SELECT MAX(CountQ) 
+    HAVING COUNT(q.questionID) = (	SELECT MAX(CountQ) 
 									FROM (	SELECT COUNT(QuestionID) AS CountQ
 											FROM Question q
                                             GROUP BY TypeID) AS MaxAns);
@@ -120,11 +120,11 @@ BEGIN
     THEN
 		SELECT * 
         FROM `group` 
-        WHERE groupname LIKE in_grp_user;
+        WHERE groupname LIKE CONCAT('%' , in_grp_user , '%');
 	ELSE
 		SELECT *
         FROM `Account` 
-        WHERE UserName LIKE in_grp_user;
+        WHERE UserName LIKE CONCAT('%' , in_grp_user , '%');
         END IF;   
 END//
 
@@ -168,17 +168,19 @@ BEGIN
 		FROM Question q
 		JOIN TypeQuestion tq ON q.TypeID = tq.TypeID
 		WHERE q.TypeID = 1
-		AND LENGTH(content) = (SELECT MAX(LENGTH(Content)) FROM question WHERE q.typeID = 1);
+		AND LENGTH(content) = (SELECT MAX(LENGTH(Content)) FROM question q WHERE q.typeID = 1);
     ELSE
 		SELECT tq.TypeName, q.QuestionID, q.Content, LENGTH(Content) AS `Length`
 		FROM Question q
 		JOIN TypeQuestion tq ON q.TypeID = tq.TypeID
 		WHERE q.TypeID = 2
-		AND LENGTH(content) = (SELECT MAX(LENGTH(content)) FROM question WHERE q.typeID = 2);
+		AND LENGTH(content) = (SELECT MAX(LENGTH(content)) FROM question q WHERE q.typeID = 2);
     END IF;
 END//
 
 DELIMITER ;
+
+CALL longest_content('Multiple-Choice');
 
 
 -- Question 9:
@@ -207,7 +209,13 @@ BEGIN
 	WITH Exam_3yrs AS (
 		SELECT ExamID
         FROM Exam
-        WHERE (YEAR(NOW()) - YEAR(CreateDate) > 3
+        WHERE (NOW() - INTERVAL 3 YEAR > CreateDate
+        ))
+	SELECT * FROM Exam_3yrs;
+    WITH Exam_3yrs AS (
+		SELECT ExamID
+        FROM Exam
+        WHERE (NOW() - INTERVAL 3 YEAR > CreateDate
         ))
 	DELETE FROM Exam WHERE ExamID = (SELECT *
 									FROM Exam_3yrs);
@@ -215,6 +223,7 @@ END//
 
 DELIMITER ;
 
+CALL delete_exam_3;
 
 -- Question 11:
 
@@ -244,7 +253,7 @@ BEGIN
 	SELECT MONTH(CreateDate) AS `Month`, COUNT(QuestionID) AS `Number of questions`
     FROM Question
     WHERE YEAR(CreateDate) = YEAR(NOW())
-    GROUP BY `month`;    
+    GROUP BY `Month`;    
 END//
 
 DELIMITER ;

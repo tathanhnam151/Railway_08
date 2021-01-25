@@ -177,4 +177,47 @@ DELIMITER //
 	END//
 DELIMITER ;
 
-DELETE FROM Exam WHERE ExamID = 11;
+
+-- Question 10:
+
+DROP TRIGGER IF EXISTS trig_del_question;
+
+DELIMITER //
+	CREATE TRIGGER trig_del_question
+	BEFORE DELETE ON Question
+    FOR EACH ROW
+    BEGIN
+		IF OLD.QuestionID IN (	SELECT QuestionID 
+								FROM ExamQuestion) THEN
+		SIGNAL SQLSTATE '12345'
+		SET MESSAGE_TEXT = 'Cannot delete question used in exams';
+        END IF;
+    END//
+DELIMITER ;
+
+
+-- Question 12:
+
+SELECT e.ExamID, e.`Code`, e.Title, e.Duration,
+	CASE
+		WHEN Duration <= 30 THEN 'Short Time'
+		WHEN Duration >= 30 AND Duration <= 60 THEN 'Medium Time'
+		ELSE 'Long Time'
+    END AS ExamDuration
+FROM Exam e;
+
+
+-- Question 13:
+
+SELECT ga.GroupID, GroupName, COUNT(AccountID) AS Members, 
+	CASE 
+		WHEN COUNT(AccountID) <= 5 THEN 'Few'
+        WHEN COUNT(AccountID) > 5 AND COUNT(AccountID) <= 20 THEN 'Normal'
+        ELSE 'Higher'
+        END AS Mem
+FROM GroupAccount ga
+JOIN `Group` g ON ga.GroupID = g.groupID
+GROUP BY GroupID;
+
+
+-- Question 14: 
