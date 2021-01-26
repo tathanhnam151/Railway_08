@@ -184,7 +184,7 @@ DROP TRIGGER IF EXISTS trig_del_question;
 
 DELIMITER //
 	CREATE TRIGGER trig_del_question
-	BEFORE DELETE ON Question
+	BEFORE DELETE ON Question 
     FOR EACH ROW
     BEGIN
 		IF OLD.QuestionID IN (	SELECT QuestionID 
