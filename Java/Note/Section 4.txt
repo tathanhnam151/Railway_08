@@ -1,0 +1,15 @@
+Constructor = notnull
+
+//constructor
+
+public Account(int id, String username) {
+	this.id = id;
+	this.username = "abc";
+}
+
+default constructor allows null value. When create a constructor, this constructor will replace the default one.
+
+
+public static void blabla {
+	Account account = new Account(1, "abc");
+}
